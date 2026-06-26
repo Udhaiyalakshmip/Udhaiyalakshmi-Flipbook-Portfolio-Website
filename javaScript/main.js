@@ -1,8 +1,9 @@
+// Page Turn Button Navigation
 const pageTurnBtn = document.querySelectorAll(".nextprev-btn");
 
 pageTurnBtn.forEach((el, index) => {
     el.onclick = () => {
-        resetServiceCards(); // Reset cards on page turn
+        resetServiceCards();
         const pageTurnId = el.getAttribute("data-page");
         const pageTurn = document.getElementById(pageTurnId);
 
@@ -20,11 +21,12 @@ pageTurnBtn.forEach((el, index) => {
     };
 });
 
+// Contact Me Button Navigation
 const pages = document.querySelectorAll(".book-page.page-right");
 const contactMeBtn = document.querySelector(".btn.contact-me");
 
 contactMeBtn.onclick = () => {
-    resetServiceCards(); // Reset cards when going to contact page
+    resetServiceCards();
     pages.forEach((page, index) => {
         setTimeout(() => {
             page.classList.add("turn");
@@ -36,13 +38,14 @@ contactMeBtn.onclick = () => {
     });
 };
 
+// Back to Profile Navigation
 let totalPages = pages.length;
 let pageNumber = 0;
 
 const backProfileButton = document.querySelector(".back-profile");
 
 backProfileButton.onclick = () => {
-    resetServiceCards(); // Reset cards when going back to profile
+    resetServiceCards();
     pages.forEach((_, index) => {
         setTimeout(() => {
             reverseIndex();
@@ -63,6 +66,7 @@ function reverseIndex() {
     }
 }
 
+// Initial Cover and Page Animation
 const coverRight = document.querySelector(".cover.cover-right");
 const pageLeft = document.querySelector(".book-page.page-left");
 
@@ -90,8 +94,9 @@ pages.forEach((_, index) => {
     }, (index + 1) * 200 + 2100);
 });
 
-// Service Cards Flip Logic
+// Service Cards Flip Functionality
 const serviceCards = document.querySelectorAll(".services-content");
+
 serviceCards.forEach((card) => {
     card.onclick = () => {
         card.classList.toggle("flipped");
@@ -104,7 +109,7 @@ function resetServiceCards() {
     });
 }
 
-// Contact Form Submission Logic (Web3Forms)
+// Contact Form Submission with Web3Forms
 const contactForm = document.getElementById("contact-form");
 const contactSuccess = document.getElementById("contact-success");
 
@@ -140,14 +145,17 @@ if (contactForm) {
                 setTimeout(() => {
                     contactForm.style.display = "block";
                     contactSuccess.style.display = "none";
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
                 }, 5000);
             } else {
                 alert("Error: " + data.message);
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
             }
 
         } catch (error) {
             alert("Something went wrong. Please try again.");
-        } finally {
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
         }
