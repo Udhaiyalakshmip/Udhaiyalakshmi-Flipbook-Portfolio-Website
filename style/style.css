@@ -304,6 +304,50 @@ body {
     margin-bottom: 0.2rem;
 }
 
+/* ── Profile About Me card (matches edu/proj card style) ── */
+.profile-about-card {
+    display: block;
+    background: rgba(234, 95, 48, 0.04);
+    border: 1px solid rgba(234, 95, 48, 0.18);
+    border-radius: 0.6rem;
+    padding: 0.75rem 0.9rem;
+    margin: 0.4rem 0 0.6rem;
+    width: 100%;
+    text-align: left;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.profile-about-card:hover {
+    border-color: rgba(234, 95, 48, 0.45);
+    box-shadow: 0 4px 14px rgba(234, 95, 48, 0.1);
+}
+
+.profile-about-icon {
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    background: var(--main-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1rem;
+    margin-top: 0.15rem;
+}
+
+.profile-about-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.profile-about-body p {
+    text-align: justify;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+
 .profile-page p {
     text-align: justify;
     font-size: 0.8rem;
@@ -734,4 +778,187 @@ body {
     opacity: 1;
     transform: translateX(-50%) scale(1);
     top: -1.8rem;
+}
+
+/* ── Project Card Layout ── */
+.proj-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: auto;
+    max-height: calc(100% - 4rem);
+    padding-right: 0.2rem;
+}
+
+.proj-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background: rgba(234, 95, 48, 0.04);
+    border: 1px solid rgba(234, 95, 48, 0.15);
+    border-radius: 0.6rem;
+    padding: 0.75rem 0.9rem;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.proj-card:hover {
+    border-color: rgba(234, 95, 48, 0.45);
+    box-shadow: 0 4px 14px rgba(234, 95, 48, 0.12);
+}
+
+.proj-icon {
+    flex-shrink: 0;
+    width: 2.4rem;
+    height: 2.4rem;
+    background: var(--main-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.15rem;
+    margin-top: 0.1rem;
+}
+
+.proj-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.proj-body h3 {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 0.35rem;
+    line-height: 1.3;
+}
+
+.proj-body ul {
+    list-style: disc;
+    padding-left: 1.1rem;
+    margin-bottom: 0.45rem;
+}
+
+.proj-body ul li {
+    font-size: 0.72rem;
+    color: var(--second-text-color);
+    line-height: 1.5;
+}
+
+.proj-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-top: 0.3rem;
+}
+
+.proj-tags span {
+    display: inline-block;
+    padding: 0.15rem 0.55rem;
+    background: rgba(234, 95, 48, 0.1);
+    border: 1px solid rgba(234, 95, 48, 0.3);
+    border-radius: 50px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--main-color);
+    transition: all 0.25s ease;
+}
+
+.proj-tags span:hover {
+    background: var(--main-color);
+    color: #fff;
+    border-color: var(--main-color);
+}
+
+/* ── Education Card Layout (mirrors project cards, no scroll) ── */
+.edu-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.42rem;
+    overflow: hidden;
+}
+
+.edu-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    background: rgba(234, 95, 48, 0.04);
+    border: 1px solid rgba(234, 95, 48, 0.15);
+    border-radius: 0.55rem;
+    padding: 0.5rem 0.75rem;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.edu-card:hover {
+    border-color: rgba(234, 95, 48, 0.45);
+    box-shadow: 0 3px 10px rgba(234, 95, 48, 0.12);
+}
+
+.edu-card-icon {
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    background: var(--main-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1rem;
+    margin-top: 0.1rem;
+}
+
+.edu-card-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.edu-year {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: var(--main-color);
+    background: rgba(234, 95, 48, 0.1);
+    border: 1px solid rgba(234, 95, 48, 0.25);
+    border-radius: 50px;
+    padding: 0.05rem 0.45rem;
+    margin-bottom: 0.2rem;
+}
+
+.edu-card-body h3 {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--text-color);
+    line-height: 1.25;
+    margin-bottom: 0.15rem;
+}
+
+.edu-inst {
+    font-size: 0.63rem;
+    color: var(--second-text-color);
+    line-height: 1.3;
+    margin-bottom: 0.18rem;
+}
+
+.edu-score {
+    display: inline-block;
+    font-size: 0.62rem;
+    font-weight: 600;
+    color: var(--main-color);
+    background: rgba(234, 95, 48, 0.08);
+    border: 1px solid rgba(234, 95, 48, 0.2);
+    border-radius: 50px;
+    padding: 0.05rem 0.45rem;
+}
+
+/* ── Education page: tighter title + no scrollbar ── */
+#turn-1 .page-front {
+    overflow: hidden;
+}
+
+#turn-1 .page-front .title {
+    margin-bottom: 0.55rem;
+    font-size: 1.3rem;
 }
